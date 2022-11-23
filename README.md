@@ -1,4 +1,4 @@
-# Class Materials
+# Welcome to OIM 3640 Class Materials Repository
 ### You should install git on your computer to access files:
 1. Visit [https://git-scm.com](https://git-scm.com)
 2. Download and install the version for your operating system
