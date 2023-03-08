@@ -13,18 +13,25 @@ def read_directory():
         os.mkdir("../watchlists")
     else:
         files = sorted(os.listdir("../watchlists"))
-        print("Available watchlists:")
-        print("-" * 30)
-        for number, name in enumerate(files, 1):
-            if name.endswith('watchlist'):
-                name = name.replace('.watchlist', '')
-                print(f"{number} - {name}")
+        if not files:
+            print("No available watchlists")
+        else:
+            print("Available watchlists:")
+            print("-" * 21)
+            for number, name in enumerate(files, 1):
+                if name.endswith('watchlist'):
+                    name = name.replace('.watchlist', '')
+                    print(f"{number} - {name}")
+            return files
 
 def read_list():
     watchlists = read_directory()
-    choice = int(input("Enter a watchlist number: "))
-    chosen_file = watchlists[choice - 1]
-    return open(f"../watchlists/{chosen_file}", "r").read().split()
+    if watchlists:
+        choice = int(input("Enter a watchlist number: "))
+        chosen_file = watchlists[choice - 1]
+        return open(f"../watchlists/{chosen_file}", "r").read().split()
+    else:
+        return "Select add a list fron the menu..."
 
 #read_directory()
 print(read_list())
