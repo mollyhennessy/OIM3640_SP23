@@ -31,7 +31,7 @@ def read_list():
         chosen_file = watchlists[choice - 1]
         return open(f"../watchlists/{chosen_file}", "r").read().split()
     else:
-        return "Select add a list fron the menu..."
+        return "Select add a list from the menu..."
 
 #read_directory()
 print(read_list())
